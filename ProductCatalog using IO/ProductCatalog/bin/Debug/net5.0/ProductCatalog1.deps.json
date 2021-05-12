@@ -1,0 +1,66 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ProductCatalog1/1.0.0": {
+        "dependencies": {
+          "CategoryLibrary": "1.0.0",
+          "CsvHelper": "27.0.2",
+          "ProductLibrary": "1.0.0"
+        },
+        "runtime": {
+          "ProductCatalog1.dll": {}
+        }
+      },
+      "CsvHelper/27.0.2": {
+        "runtime": {
+          "lib/net5.0/CsvHelper.dll": {
+            "assemblyVersion": "27.0.0.0",
+            "fileVersion": "27.0.2.0"
+          }
+        }
+      },
+      "CategoryLibrary/1.0.0": {
+        "runtime": {
+          "CategoryLibrary.dll": {}
+        }
+      },
+      "ProductLibrary/1.0.0": {
+        "dependencies": {
+          "CategoryLibrary": "1.0.0"
+        },
+        "runtime": {
+          "ProductLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ProductCatalog1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CsvHelper/27.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BXIM6epjyGh0C73L6t4+EPl1kNiMSIkjkgNXco6USKmO8Dqa+Zw/vujYJwP9S/s51iaR7zZ90mQKHfp/iLfv6A==",
+      "path": "csvhelper/27.0.2",
+      "hashPath": "csvhelper.27.0.2.nupkg.sha512"
+    },
+    "CategoryLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ProductLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

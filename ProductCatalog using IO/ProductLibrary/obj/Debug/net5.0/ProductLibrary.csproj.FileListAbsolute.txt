@@ -1,0 +1,15 @@
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\obj\Debug\net5.0\ProductLibrary.csprojAssemblyReference.cache
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\obj\Debug\net5.0\ProductLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\obj\Debug\net5.0\ProductLibrary.AssemblyInfoInputs.cache
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\obj\Debug\net5.0\ProductLibrary.AssemblyInfo.cs
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\obj\Debug\net5.0\ProductLibrary.csproj.CoreCompileInputs.cache
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\bin\Debug\net5.0\ProductLibrary.deps.json
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\bin\Debug\net5.0\ProductLibrary.dll
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\bin\Debug\net5.0\ref\ProductLibrary.dll
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\bin\Debug\net5.0\ProductLibrary.pdb
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\obj\Debug\net5.0\ProductLibrary.dll
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\obj\Debug\net5.0\ref\ProductLibrary.dll
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\obj\Debug\net5.0\ProductLibrary.pdb
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\bin\Debug\net5.0\CategoryLibrary.dll
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\bin\Debug\net5.0\CategoryLibrary.pdb
+C:\Users\s s infotech\source\repos\ProductCatalog1\ProductLibrary\obj\Debug\net5.0\ProductLibrary.csproj.CopyComplete

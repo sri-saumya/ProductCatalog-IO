@@ -1,0 +1,168 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "CsvHelper/27.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/CsvHelper.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/CsvHelper.dll": {}
+        }
+      },
+      "ProductCategoryLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CsvHelper": "27.0.2"
+        },
+        "compile": {
+          "bin/placeholder/ProductCategoryLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProductCategoryLibrary.dll": {}
+        }
+      },
+      "ProductLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\CategoryLiberary\\CategoryLibrary.csproj": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ProductLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ProductLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CsvHelper/27.0.2": {
+      "sha512": "BXIM6epjyGh0C73L6t4+EPl1kNiMSIkjkgNXco6USKmO8Dqa+Zw/vujYJwP9S/s51iaR7zZ90mQKHfp/iLfv6A==",
+      "type": "package",
+      "path": "csvhelper/27.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "csvhelper.27.0.2.nupkg.sha512",
+        "csvhelper.nuspec",
+        "lib/net45/CsvHelper.dll",
+        "lib/net45/CsvHelper.xml",
+        "lib/net47/CsvHelper.dll",
+        "lib/net47/CsvHelper.xml",
+        "lib/net5.0/CsvHelper.dll",
+        "lib/net5.0/CsvHelper.xml",
+        "lib/netstandard2.0/CsvHelper.dll",
+        "lib/netstandard2.0/CsvHelper.xml",
+        "lib/netstandard2.1/CsvHelper.dll",
+        "lib/netstandard2.1/CsvHelper.xml"
+      ]
+    },
+    "ProductCategoryLibrary/1.0.0": {
+      "type": "project",
+      "path": "../ProductCategoryLibrary/ProductCategoryLibrary.csproj",
+      "msbuildProject": "../ProductCategoryLibrary/ProductCategoryLibrary.csproj"
+    },
+    "ProductLibrary/1.0.0": {
+      "type": "project",
+      "path": "../ProductLibrary/ProductLibrary.csproj",
+      "msbuildProject": "../ProductLibrary/ProductLibrary.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\CategoryLiberary\\CategoryLibrary.csproj",
+      "CsvHelper >= 27.0.2",
+      "ProductCategoryLibrary >= 1.0.0",
+      "ProductLibrary >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\lenovo\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\ProductCatalog1\\ProductCatalog.csproj",
+      "projectName": "ProductCatalog",
+      "projectPath": "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\ProductCatalog1\\ProductCatalog.csproj",
+      "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\ProductCatalog1\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\CategoryLiberary\\CategoryLibrary.csproj": {
+              "projectPath": "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\CategoryLiberary\\CategoryLibrary.csproj"
+            },
+            "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\ProductCategoryLibrary\\ProductCategoryLibrary.csproj": {
+              "projectPath": "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\ProductCategoryLibrary\\ProductCategoryLibrary.csproj"
+            },
+            "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\ProductLibrary\\ProductLibrary.csproj": {
+              "projectPath": "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\ProductLibrary\\ProductLibrary.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "dependencies": {
+          "CsvHelper": {
+            "target": "Package",
+            "version": "[27.0.2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\CategoryLiberary\\CategoryLibrary.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog1\\CategoryLiberary\\CategoryLibrary.csproj",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}
