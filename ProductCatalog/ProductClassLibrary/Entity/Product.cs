@@ -13,6 +13,7 @@ namespace ProductClassLibrary.Entity
         public string Manufacturer { get; set; }
         public int SellingPrice { get; set; }
 
+        public string CategoryName { get; set; }
         public List<Category> Category;
 
         public static int ID = 1;

@@ -1,5 +1,4 @@
-Name,ShortCode,Description,Manufacturer,SellingPrice,ProductID
-Mobile,qwe,"RAM : 8gb, CORE : I3",Redemi,50000,1
-Mouse,rty," Portable",Dell,2000,2
-Book,b,Good,Extramarks,1000,1
-www,www,www,www,111,3
+Name,ShortCode,Description,Manufacturer,SellingPrice,CategoryName,ProductID
+Mobile,qwe,"RAM : 8gb, CORE : I3",Redemi,50000,,1
+Mouse,rty," Portable",Dell,2000,,2
+ss,ss,ss,ss,213,Grocery,3

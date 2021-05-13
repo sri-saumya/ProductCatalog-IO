@@ -32,7 +32,7 @@ namespace ProductClassLibrary
                 foreach (var record in records)
                 {
                     Console.WriteLine(record.ProductID + "\t" + record.Name + "\t" + record.ShortCode + "\t"
-                       + record.Manufacturer + "\t\t" + record.Description + "\t" + record.SellingPrice );
+                       + record.Manufacturer + "\t\t" + record.Description + "\t" + record.SellingPrice+"\t"+record.CategoryName );
                 }
 
             }
@@ -56,6 +56,7 @@ namespace ProductClassLibrary
             });
             List<Category> productCategories = new List<Category>();
             string choice;
+            string Cname;
             do
             {
                 Console.WriteLine("GIVE CATEGORY ID ");
@@ -63,24 +64,26 @@ namespace ProductClassLibrary
                 var data = CategoryOperations.categories.Single((a) => a.Category_ID == id);
                 if (data != null)
                     productCategories.Add(data);
+                Cname = data.Name;
                 Console.WriteLine("FOR ADDING MORE CATEGORY : yes , else : no ");
                 choice = Console.ReadLine();
             } while (choice == "yes");
 
+
             product = new List<Product>();
             product.Add(new Product
             {
-                ProductID = Product.ID,
+                ProductID = products.Count + 1,
                 Name = pName,
                 ShortCode = pCode,
                 Description = desc,
                 SellingPrice = sp,
                 Manufacturer=m,
-                Category = productCategories,
+                CategoryName = Cname,
 
             });
-            products.AddRange(product);
 
+            products.AddRange(product);
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 NewLine = Environment.NewLine,
@@ -109,8 +112,6 @@ namespace ProductClassLibrary
                 Console.WriteLine("Id Not Found");
             }
         }
-
-
 
     }
 }
