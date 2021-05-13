@@ -28,6 +28,9 @@
       },
       "Microsoft.CSharp/4.5.0": {},
       "CategoryClassLibrary/1.0.0": {
+        "dependencies": {
+          "CsvHelper": "27.0.2"
+        },
         "runtime": {
           "CategoryClassLibrary.dll": {}
         }

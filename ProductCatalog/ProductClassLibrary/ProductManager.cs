@@ -28,7 +28,6 @@ namespace ProductClassLibrary
                 Console.WriteLine("Enter id : ");
                 int id = Int32.Parse(Console.ReadLine());
                 po.SearchById(id);
-
             }
             else if (Pchoice == "3")
             {

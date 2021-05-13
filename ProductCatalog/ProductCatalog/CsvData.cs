@@ -33,7 +33,7 @@ namespace ProductCatalog_
                 }
                 if (choice.ToUpper() == "CATEGORY")
                 {
-                    CategoryManager categoryManager = new CategoryManager();
+                    CategoryManager categoryManager = new CategoryManager(categoryCsvPath);
                     categoryManager.CategoryMenu();
                 }
                 if (choice.ToUpper() == "EXIT")

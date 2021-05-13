@@ -5,6 +5,9 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using System.Globalization;
 using System.Collections.Generic;
+using CategoryClassLibrary;
+using CategoryClassLibrary.Entity;
+using System.Linq;
 
 namespace ProductClassLibrary
 {
@@ -25,22 +28,44 @@ namespace ProductClassLibrary
             {
                 IEnumerable<dynamic> records = csvReader.GetRecords<dynamic>();
                 Console.WriteLine("calling get product");
-                Console.WriteLine("Id\tName\tShortCode\tManufacture\tDescription\tPrice");
+                Console.WriteLine("Id\tName\tShortCode\tManufacture\tDescription\tPrice\t\tCATEGORY");
                 foreach (var record in records)
                 {
                     Console.WriteLine(record.ProductID + "\t" + record.Name + "\t" + record.ShortCode + "\t"
-                       + record.Manufacturer + "\t\t" + record.Description + "\t" + record.SellingPrice + "\t");
+                       + record.Manufacturer + "\t\t" + record.Description + "\t" + record.SellingPrice );
                 }
 
             }
         }
         public void AddProduct()
-        {   
+        {
+            Console.WriteLine("Enter name");
             string pName = Console.ReadLine();
+            Console.WriteLine("Enter shortcode");
             string pCode = Console.ReadLine();
+            Console.WriteLine("Enter description");
             string desc = Console.ReadLine();
+            Console.WriteLine("Enter manufacturer");
             string m = Console.ReadLine();
+            Console.WriteLine("Enter selling price");
             int sp = Convert.ToInt32(Console.ReadLine());
+
+            CategoryOperations.categories.ForEach((i) =>
+            {
+                Console.WriteLine(i.Category_ID + i.Name);
+            });
+            List<Category> productCategories = new List<Category>();
+            string choice;
+            do
+            {
+                Console.WriteLine("GIVE CATEGORY ID ");
+                int id = Convert.ToInt32(Console.ReadLine());
+                var data = CategoryOperations.categories.Single((a) => a.Category_ID == id);
+                if (data != null)
+                    productCategories.Add(data);
+                Console.WriteLine("FOR ADDING MORE CATEGORY : yes , else : no ");
+                choice = Console.ReadLine();
+            } while (choice == "yes");
 
             product = new List<Product>();
             product.Add(new Product
@@ -51,7 +76,7 @@ namespace ProductClassLibrary
                 Description = desc,
                 SellingPrice = sp,
                 Manufacturer=m,
-                //Category = productCategories,
+                Category = productCategories,
 
             });
             products.AddRange(product);

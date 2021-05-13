@@ -26,6 +26,9 @@
       "CategoryClassLibrary/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "CsvHelper": "27.0.2"
+        },
         "compile": {
           "bin/placeholder/CategoryClassLibrary.dll": {}
         },
