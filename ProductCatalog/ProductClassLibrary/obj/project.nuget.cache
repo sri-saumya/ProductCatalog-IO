@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "kmkOyQ9frhAgtP/YzFQY1f90ClgFbwTLJehYeDRSotsUXrLBBa6mkZbtIPX9hmEnheCezqowp/ETXMQfFAkXEw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lenovo\\OneDrive - Taazaa Tech Pvt Ltd\\Desktop\\training\\ProductCatalog\\ProductClassLibrary\\ProductClassLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lenovo\\.nuget\\packages\\csvhelper\\27.0.2\\csvhelper.27.0.2.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
