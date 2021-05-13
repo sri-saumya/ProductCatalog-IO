@@ -27,45 +27,23 @@ namespace ProductClassLibrary
             {
                 Console.WriteLine("Enter id : ");
                 int id = Int32.Parse(Console.ReadLine());
+                po.SearchById(id);
 
             }
-            //else if (Pchoice == "3")
-            //{
-            //    Console.WriteLine("Enter name");
-            //    var cn = Console.ReadLine();
-            //    Console.WriteLine("Enter short code");
-            //    var sc = Console.ReadLine();
-            //    if (sc.Length <= 4)
-            //    {
-            //        Console.WriteLine("Enter description");
-            //        var d = Console.ReadLine();
-            //        Console.WriteLine("Enter selling price");
-            //        var s = Int32.Parse(Console.ReadLine());
-            //        if (s > 0)
-            //        {
-            //            ProductOperations.AddProduct(cn, sc, d, s);
-            //        }
-            //        else
-            //        {
-            //            Console.WriteLine("Selling Price Code Should be > 0");
-            //        }
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("Source Code Should be <= 4");
-            //    }
+            else if (Pchoice == "3")
+            {
+                po.AddProduct();
+            }
 
-
-            //}
-            //else if (Pchoice == "4")
-            //{
-            //    ProductOperations.DeleteProduct();
-            //    Console.WriteLine("Product Deleted");
-            //}
-            //else if (Pchoice == "5")
-            //{
-            //    Console.WriteLine("Please try again");
-            //}
+            else if (Pchoice == "4")
+            {
+                //po.DeleteProduct();
+                Console.WriteLine("Product Deleted");
+            }
+            else if (Pchoice == "5")
+            {
+                Console.WriteLine("Please try again");
+            }
 
         }
     

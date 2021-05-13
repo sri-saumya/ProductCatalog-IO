@@ -12,24 +12,22 @@ namespace ProductClassLibrary
             new Product()
             {
                     ProductID = Product.IncrementId(),
-                    Name = "Laptop",
-                    Manufacturer = "Lenovo",
+                    Name = "Mobile",
+                    Manufacturer = "Redemi",
                     ShortCode = "qwe",
                     Description = "RAM : 8gb, CORE : I3",
                     SellingPrice = 50000
 
+            },
+            new Product()
+            {
+                    ProductID = Product.IncrementId(),
+                    Name = "Mouse",
+                    Manufacturer = "Dell",
+                    ShortCode = "rty",
+                    Description = " Portable",
+                    SellingPrice = 2000
             }
-            //new Product()
-            //{
-            //        ProductID = Product.IncrementId(),
-            //        Name = "Keyboard",
-            //        Manufacturer = "Dell",
-            //        ShortCode = "rty",
-            //        Description = " Portable",
-            //        SellingPrice = 2000
-
-
-            //}
         };
         
    }
