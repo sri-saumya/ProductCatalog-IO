@@ -20,12 +20,24 @@ namespace CategoryClassLibrary
 
         public void AddCategory()
         {
-            Console.WriteLine("Enter name");
-            string categoryName = Console.ReadLine();
-            Console.WriteLine("Enter ShortCode");
-            string pCode = Console.ReadLine();
-            Console.WriteLine("Enter Description");
-            string desc = Console.ReadLine();
+            string categoryName = "";
+            while (categoryName.Length < 1)
+            {
+                Console.WriteLine("Enter name \nName is required");
+                categoryName = Console.ReadLine();
+            }
+            string pCode = "";
+            while (pCode.Length > 4 || pCode.Length < 1)
+            {
+                Console.WriteLine("Enter shortcode \nShortcode is required(0<length<5)");
+                pCode = Console.ReadLine();
+            }
+            string desc = "";
+            while (desc.Length < 1)
+            {
+                Console.WriteLine("Enter Description \nDescription is required");
+                desc = Console.ReadLine();
+            }
             category = new List<Category>();
             category.Add(new Category
             {

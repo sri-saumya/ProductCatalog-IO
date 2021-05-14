@@ -37,19 +37,41 @@ namespace ProductClassLibrary
 
             }
         }
+
+
         public void AddProduct()
         {
-            Console.WriteLine("Enter name");
-            string pName = Console.ReadLine();
-            Console.WriteLine("Enter shortcode");
-            string pCode = Console.ReadLine();
-            Console.WriteLine("Enter description");
-            string desc = Console.ReadLine();
-            Console.WriteLine("Enter manufacturer");
-            string m = Console.ReadLine();
-            Console.WriteLine("Enter selling price");
-            int sp = Convert.ToInt32(Console.ReadLine());
-
+            
+            string pName = "";
+            while (pName.Length < 1)
+            {
+                Console.WriteLine("Enter name \nName is required");
+                pName = Console.ReadLine();
+            }
+            string pCode = "";
+            while(pCode.Length > 4 || pCode.Length < 1)
+            {
+                Console.WriteLine("Enter shortcode \nShortcode is required(0<length<5)");
+                pCode = Console.ReadLine();
+            }
+            string desc = "";
+            while (desc.Length < 1)
+            {
+                Console.WriteLine("Enter Description \nDescription is required");
+                desc = Console.ReadLine();
+            }
+            string m = "";
+            while (m.Length < 1)
+            {
+                Console.WriteLine("Enter Manufacturer \nManufacturer is required");
+                m = Console.ReadLine();
+            }
+            int sp = 0;
+            while (sp < 1)
+            {
+                Console.WriteLine("Enter SellingPrice \nSellingPrice > 0 is required");
+                sp = Convert.ToInt32(Console.ReadLine());
+            }
             CategoryOperations.categories.ForEach((i) =>
             {
                 Console.WriteLine(i.Category_ID + i.Name);
@@ -68,7 +90,6 @@ namespace ProductClassLibrary
                 Console.WriteLine("Enter: no   to exit ");
                 choice = Console.ReadLine();
             } while (choice == "yes");
-
 
             product = new List<Product>();
             product.Add(new Product
@@ -93,7 +114,9 @@ namespace ProductClassLibrary
                 csvWriter.WriteRecords(products);
                 Console.WriteLine("\n");
                 Console.WriteLine("Added successfully");
+                writer.Flush();
             }
+
         }
 
 
@@ -150,9 +173,9 @@ namespace ProductClassLibrary
             Console.WriteLine("Enter id:");
             int id = Convert.ToInt32(Console.ReadLine());
             using (var reader = new StreamReader(ProductFilePath))
-            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            using (var csvFile = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                records = csv.GetRecords<Product>().ToList();
+                records = csvFile.GetRecords<Product>().ToList();
                 for (int i = 0; i < records.Count; ++i)
                 {
                     if (records[i].ProductID == id)
