@@ -1,7 +1,6 @@
 Name,ShortCode,Description,Manufacturer,SellingPrice,CategoryName,ProductID
-Mobile,qwe,"RAM : 8gb, CORE : I3",Redemi,50000,,1
-Mouse,rty," Portable",Dell,2000,,2
+Laptop,qwe,"RAM : 8gb, CORE : I3",Redemi,50000,Grocery,1
+Milk,rty," Portable",Dell,2000,Dairy,2
 Shoap,sau,Good,Dove,10,Grocery,3
-Mobile,qwe,"RAM : 8gb, CORE : I3",Redemi,50000,,1
-Mouse,rty," Portable",Dell,2000,,2
-Dove,dov,Good,Person,200,Grocery,3
+Car,car,Good,Dove,100000,Automobile,4
+
