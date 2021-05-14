@@ -31,7 +31,11 @@ namespace CategoryClassLibrary
             {
                 co.AddCategory();
             }
-            
+            else if (Pchoice == "4")
+            {
+                co.DeleteCategory();
+            }
+
         }
     }
 }

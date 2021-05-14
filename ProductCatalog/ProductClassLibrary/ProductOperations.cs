@@ -65,7 +65,7 @@ namespace ProductClassLibrary
                 if (data != null)
                     productCategories.Add(data);
                 Cname = data.Name;
-                Console.WriteLine("FOR ADDING MORE CATEGORY : yes , else : no ");
+                Console.WriteLine("Enter: no   to exit ");
                 choice = Console.ReadLine();
             } while (choice == "yes");
 
@@ -82,14 +82,13 @@ namespace ProductClassLibrary
                 CategoryName = Cname,
 
             });
-
             products.AddRange(product);
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 NewLine = Environment.NewLine,
             };
             using (var writer = new StreamWriter(ProductFilePath))
-            using (CsvWriter csvWriter = new CsvWriter(writer, System.Globalization.CultureInfo.CreateSpecificCulture("en-SI")))
+            using (CsvWriter csvWriter = new CsvWriter(writer, config))
             {
                 csvWriter.WriteRecords(products);
                 Console.WriteLine("\n");
@@ -97,19 +96,75 @@ namespace ProductClassLibrary
             }
         }
 
-        public void SearchById(int id)
-        {
-            var d = products.FindAll((i) => i.ProductID == id);
-            if (d.Count > 0)
-            {
-                d.ForEach((i) =>
-                {
-                    Console.WriteLine($"{i.ProductID} \t\t {i.Name}\t\t{i.Manufacturer}\t\t{i.Description}\t\t{i.SellingPrice}");
-                });
+
+        public void SearchProduct()
+        {  
+            Console.WriteLine("1 : Give Name");
+            Console.WriteLine("2 : Give Short Code");
+
+            int ch3 = Convert.ToInt32(Console.ReadLine());
+            switch (ch3)
+            {   
+                case 1:
+                    Console.WriteLine("Enter Name : ");
+                    var name = Console.ReadLine();
+                    SearchByName(name);
+                    break;
+                case 2:
+                    Console.WriteLine("Enter Short Code : ");
+                    var sc = Console.ReadLine();
+                    SearchByShortCode(sc);
+                    break;
             }
-            else
+        }
+        public void SearchByName(string Name)
+        {
+            var s = File.ReadLines(ProductFilePath);
+            foreach (var line in s)
             {
-                Console.WriteLine("Id Not Found");
+                if (line.Split(',')[0].Equals(Name))
+                {
+                    Console.WriteLine(line);
+                    return;
+                }
+
+            }
+        }
+        public void SearchByShortCode(string shortCode)
+        {
+            var s = File.ReadLines(ProductFilePath);
+            foreach (var line in s)
+            {
+                if (line.Split(',')[1].Equals(shortCode))
+                {
+                    Console.WriteLine(line);
+                    return;
+                }
+
+            }
+        }
+
+        public  void DeleteProduct()
+        {
+            List<Product> records;
+            Console.WriteLine("Enter id:");
+            int id = Convert.ToInt32(Console.ReadLine());
+            using (var reader = new StreamReader(ProductFilePath))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                records = csv.GetRecords<Product>().ToList();
+                for (int i = 0; i < records.Count; ++i)
+                {
+                    if (records[i].ProductID == id)
+                    {
+                        records.RemoveAt(i);
+                    }
+                }
+            }
+            using (var writer = new StreamWriter(ProductFilePath))
+            using (var csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csvWriter.WriteRecords(records);
             }
         }
 

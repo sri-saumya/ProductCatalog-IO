@@ -5,6 +5,7 @@ using System.IO;
 using CsvHelper;
 using CsvHelper.Configuration;
 using System.Globalization;
+using System.Linq;
 
 namespace CategoryClassLibrary
 {
@@ -16,15 +17,19 @@ namespace CategoryClassLibrary
         {
             CategoryFilePath = s;
         }
+
         public void AddCategory()
         {
+            Console.WriteLine("Enter name");
             string categoryName = Console.ReadLine();
+            Console.WriteLine("Enter ShortCode");
             string pCode = Console.ReadLine();
+            Console.WriteLine("Enter Description");
             string desc = Console.ReadLine();
             category = new List<Category>();
             category.Add(new Category
             {
-               
+                Category_ID = categories.Count + 1,
                 Name = categoryName,
                 ShortCode = pCode,
                 Description = desc,
@@ -43,7 +48,6 @@ namespace CategoryClassLibrary
                 Console.WriteLine("\n");
                 Console.WriteLine("Added successfully");
             }
-
         }
 
         public void GetCategory()
@@ -58,7 +62,6 @@ namespace CategoryClassLibrary
                     Console.WriteLine(record.Category_ID + "\t" + record.Name + "\t" + record.ShortCode + "\t"
                        +  "\t\t" + record.Description );
                 }
-
             }
         }
 
@@ -87,7 +90,6 @@ namespace CategoryClassLibrary
                     SearchByShortCode(sc);
                     break;
             }
-
         }
         public static void SearchByID(int id)
         {
@@ -105,35 +107,57 @@ namespace CategoryClassLibrary
             }
 
         }
-        public static void SearchByName(string name)
+        public  void SearchByName(string Name)
         {
-            var d = categories.FindAll((i) => i.Name == name);
-            if (d.Count > 0)
+            var s = File.ReadLines(CategoryFilePath);
+            foreach (var line in s)
             {
-                d.ForEach((i) =>
+                if (line.Split(',')[1].Equals(Name))
                 {
-                    Console.WriteLine($"{i.Category_ID} \t\t {i.Name}\t\t{i.ShortCode}\t\t{i.Description}");
-                });
-            }
-            else
-            {
-                Console.WriteLine("Invalid Name");
+                    Console.WriteLine(line);
+                    return;
+                }
+
             }
 
         }
-        public static void SearchByShortCode(string shortCode)
+        public void SearchByShortCode(string shortCode)
         {
-            var d = categories.FindAll((i) => i.ShortCode == shortCode);
-            if (d.Count > 0)
+            var s = File.ReadLines(CategoryFilePath);
+            foreach (var line in s)
             {
-                d.ForEach((i) =>
+                if (line.Split(',')[2].Equals(shortCode))
                 {
-                    Console.WriteLine($"{i.Category_ID} \t\t {i.Name}\t\t{i.ShortCode}\t\t{i.Description}");
-                });
+                    Console.WriteLine(line);
+                    return;
+                }
+
             }
-            else
+        }
+
+
+        public void DeleteCategory()
+        {
+            List<Category> records;
+            Console.WriteLine("Enter id:");
+            int id = Convert.ToInt32(Console.ReadLine());
+            using (var reader = new StreamReader(CategoryFilePath))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
             {
-                Console.WriteLine("Invalid Short Code ");
+                records = csv.GetRecords<Category>().ToList();
+                for (int i = 0; i < records.Count; ++i)
+                {
+                    if (records[i].Category_ID == id)
+                    {
+                        records.RemoveAt(i);
+                    }
+                }
+            }
+
+            using (var writer = new StreamWriter(CategoryFilePath))
+            using (var csvWriter = new CsvWriter(writer, CultureInfo.InvariantCulture))
+            {
+                csvWriter.WriteRecords(records);
             }
         }
     }
